@@ -1,6 +1,6 @@
 {
   "name": "vue-router-tab",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "Vue.js tab components, based on Vue Router",
   "keywords": [
     "vue-router-tab",
@@ -12,13 +12,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bhuh12/vue-router-tab.git"
+    "url": "git+https://github.com/Peliqan-io/vue-router-tab"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
   "bugs": {
-    "url": "https://github.com/bhuh12/vue-router-tab/issues"
+    "url": "https://github.com/Peliqan-io/vue-router-tab/issues"
   },
   "main": "dist/lib/vue-router-tab.umd.min.js",
   "scripts": {
