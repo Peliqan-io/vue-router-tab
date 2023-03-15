@@ -96,31 +96,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
-/***/ "0d3e":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  tab: {
-    untitled: '无标题'
-  },
-  contextmenu: {
-    refresh: '刷新',
-    refreshAll: '刷新全部',
-    close: '关闭',
-    closeLefts: '关闭左侧',
-    closeRights: '关闭右侧',
-    closeOthers: '关闭其他'
-  },
-  msg: {
-    keepLastTab: '至少应保留1个页签',
-    i18nProp: '请提供“i18n”方法以处理国际化内容'
-  }
-});
-
-/***/ }),
-
 /***/ "3dec":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1017,8 +992,7 @@ module.exports = __webpack_require__("96cf");
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./en.js": "3dec",
-	"./zh.js": "0d3e"
+	"./en.js": "3dec"
 };
 
 
@@ -1079,12 +1053,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6720b08a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/RouterTab.vue?vue&type=template&id=4c6845c4&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4ab3c797-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/RouterTab.vue?vue&type=template&id=d24ebe8a&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"router-tab"},[_c('header',{ref:"header",staticClass:"router-tab__header"},[_c('div',{staticClass:"router-tab__slot-start"},[_vm._t("start")],2),_c('tab-scroll',{ref:"scroll"},[_c('transition-group',_vm._b({staticClass:"router-tab__nav",attrs:{"tag":"ul"},on:{"after-enter":_vm.onTabTrans,"after-leave":_vm.onTabTrans}},'transition-group',_vm.tabTrans,false),_vm._l((_vm.items),function(item,index){return _c('tab-item',{key:item.id || item.to,ref:"tab",refInFor:true,attrs:{"data":item,"index":index},nativeOn:{"contextmenu":function($event){$event.preventDefault();return (function (e) { return _vm.showContextmenu(item.id, index, e); }).apply(null, arguments)}}})}),1)],1),_c('div',{staticClass:"router-tab__slot-end"},[_vm._t("end")],2)],1),_c('div',{staticClass:"router-tab__container"},[_c('router-alive',{attrs:{"page-class":"router-tab-page","keep-alive":_vm.keepAlive,"reuse":_vm.reuse,"max":_vm.maxAlive,"transition":_vm.pageTrans,"page-scroller":_vm.pageScroller},on:{"ready":_vm.onAliveReady,"change":_vm.onAliveChange}}),_c('transition-group',_vm._b({staticClass:"router-tab__iframes",attrs:{"tag":"div"}},'transition-group',_vm.pageTrans,false),_vm._l((_vm.iframes),function(url){return _c('iframe',{directives:[{name:"show",rawName:"v-show",value:(url === _vm.currentIframe),expression:"url === currentIframe"}],key:url,staticClass:"router-tab__iframe",attrs:{"src":url,"name":_vm.iframeNamePrefix + url,"frameborder":"0"},on:{"load":function($event){return _vm.iframeLoaded(url)}}})}),0)],1),_c('transition',{attrs:{"name":"router-tab-zoom"}},[(_vm.contextmenu !== false && _vm.contextData.index > -1)?_c('tab-contextmenu',{attrs:{"data":_vm.contextData,"menu":_vm.contextMenu}}):_vm._e()],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./lib/RouterTab.vue?vue&type=template&id=4c6845c4&
+// CONCATENATED MODULE: ./lib/RouterTab.vue?vue&type=template&id=d24ebe8a&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
 var regenerator = __webpack_require__("a34a");
@@ -1105,9 +1079,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-// 空对象和数组
+// empty objects and arrays
 var emptyObj = Object.create(null);
-var emptyArray = []; // 从数组删除项
+var emptyArray = []; // remove item from array
 
 function util_remove(arr, item) {
   if (arr.length) {
@@ -1119,9 +1093,9 @@ function util_remove(arr, item) {
   }
 }
 /**
- * 滚动到指定位置
+ * Scroll to the specified position
  * @export
- * @param {Element} wrap 滚动区域
+ * @param {Element} wrap scroll area
  * @param {number} [left=0]
  * @param {number} [top=0]
  */
@@ -1148,12 +1122,12 @@ function util_scrollTo(_ref) {
   }
 }
 /**
- * 指定元素滚动到可视区域
+ * The specified element scrolls to the visible area
  * @export
- * @param {Element} el 目标元素
- * @param {Element} wrap 滚动区域
- * @param {String} block 垂直方向的对齐，可选：'start', 'center', 'end', 或 'nearest'
- * @param {String} inline 水平方向的对齐，可选值同上
+ * @param {Element} el target element
+ * @param {Element} wrap scroll area
+ * @param {String} block vertical alignment, optional: 'start', 'center', 'end', or 'nearest'
+ * @param {String} inline Horizontal alignment, the optional value is the same as above
  */
 
 function util_scrollIntoView(_ref2) {
@@ -1172,6 +1146,7 @@ function util_scrollIntoView(_ref2) {
       inline: inline
     });
   } else {
+    // eslint-disable-next-line prefer-const
     var offsetLeft = el.offsetLeft,
         offsetTop = el.offsetTop;
     var left, top;
@@ -1194,7 +1169,7 @@ function util_scrollIntoView(_ref2) {
       top: top
     });
   }
-} // 获取滚动条宽度
+} // get scrollbar width
 
 var getScrollbarWidth = function () {
   var width = null;
@@ -1209,11 +1184,11 @@ var getScrollbarWidth = function () {
   };
 }();
 /**
- * 提取计算属性
+ * Extract computed properties
  * @export
- * @param {String} origin 来源属性
- * @param {Array|Object} props 需要提取的计算属性
- * @param {String} context 来源选项为 function 时的入参
+ * @param {String} origin source attribute
+ * @param {Array|Object} props Computed properties to extract
+ * @param {String} The input parameter when the context source option is function
  * @returns {Object}
  */
 
@@ -1235,10 +1210,10 @@ function mapGetters(origin, props, context) {
       var val = this[origin][prop];
 
       if (context && typeof val === 'function') {
-        // 函数返回
+        // function return
         return val(this[context]);
       } else if (def !== undefined && val === undefined) {
-        // 默认值
+        // Defaults
         if (typeof def === 'function') {
           return def.bind(this)();
         }
@@ -1265,17 +1240,17 @@ function mapGetters(origin, props, context) {
   }
 
   return map;
-} // 去除路径中的 hash
+} // remove the hash from the path
 
 var prunePath = function prunePath(path) {
   return path.split('#')[0];
-}; // 解析过渡配置
+}; // parse the transition configuration
 
 function getTransOpt(trans) {
   return typeof trans === 'string' ? {
     name: trans
   } : trans;
-} // 获取组件 id
+} // get component id
 
 function getCtorId(vm) {
   return vm.$vnode.componentOptions.Ctor.cid;
@@ -1287,12 +1262,12 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
- // 右键菜单
+ // right click menu
 
 /* harmony default export */ var contextmenu = ({
   data: function data() {
     return {
-      // 右键菜单
+      // right click menu
       contextData: {
         id: null,
         index: -1,
@@ -1302,31 +1277,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   computed: {
-    // 菜单配置
+    // menu configuration
     contextMenu: function contextMenu() {
       return Array.isArray(this.contextmenu) ? this.contextmenu : undefined;
     }
   },
   watch: {
-    // 路由切换隐藏右键菜单
+    // Routing switch hides the right-click menu
     $route: function $route() {
       this.hideContextmenu();
     },
-    // 拖拽排序隐藏右键菜单
+    // Drag and drop sort to hide the right-click menu
     onDragSort: function onDragSort() {
       this.hideContextmenu();
     }
   },
   mounted: function mounted() {
-    // 显示右键菜单，绑定点击关闭事件
+    // Display the right-click menu, bind the click to close event
     document.addEventListener('click', this.contextmenuClickOutSide);
   },
   destroyed: function destroyed() {
-    // 隐藏右键菜单，移除点击关闭事件
+    // Hide the right-click menu and remove the click to close event
     document.removeEventListener('click', this.contextmenuClickOutSide);
   },
   methods: {
-    // 显示页签右键菜单
+    // Display tab context menu
     showContextmenu: function showContextmenu(id, index, e) {
       var _this = this;
 
@@ -1348,7 +1323,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this.$nextTick();
 
               case 4:
-                // 菜单定位
+                // menu positioning
                 _ref = e || emptyObj, top = _ref.clientY, left = _ref.clientX;
                 Object.assign(_this.contextData, {
                   id: id,
@@ -1365,11 +1340,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    // 关闭页签右键菜单
+    // Close the right-click menu of the tab
     hideContextmenu: function hideContextmenu() {
       this.showContextmenu(null, -1);
     },
-    // 菜单外部点击关闭
+    // Click outside the menu to close
     contextmenuClickOutSide: function contextmenuClickOutSide(e) {
       if (e.target !== this.$el.querySelector('.router-tab-contextmenu')) {
         this.hideContextmenu();
@@ -1390,11 +1365,12 @@ function lang_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeo
 
 function lang_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-// 引入目录下语言配置
-var context = __webpack_require__("b13e"); // 语言配置
+// Import the language configuration under the directory
+var context = __webpack_require__("b13e"); // language configuration
 
 
 /* harmony default export */ var config_lang = (context.keys().reduce(function (map, path) {
+  // eslint-disable-next-line prefer-const
   var _$exec = /\.\/(.*).js/g.exec(path),
       _$exec2 = lang_slicedToArray(_$exec, 2),
       key = _$exec2[1];
@@ -1403,24 +1379,24 @@ var context = __webpack_require__("b13e"); // 语言配置
   return map;
 }, {}));
 // CONCATENATED MODULE: ./lib/util/warn.js
-var prefix = '[Vue Router Tab]'; // 错误
+var prefix = '[Vue Router Tab]'; // mistake
 
 function assert(condition, message) {
   if (!condition) {
     throw new Error("".concat(prefix, " ").concat(message));
   }
-} // 警告
+} // warn
 
 function warn(condition, message) {
   if (!condition) {
     typeof console !== 'undefined' && console.warn("".concat(prefix, " ").concat(message));
   }
-} // 常用消息
+} // Common news
 
 var messages = {
   renamed: function renamed(newName) {
-    var target = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '方法';
-    return "\u8BE5".concat(target, "\u5DF2\u66F4\u540D\u4E3A\u201C").concat(newName, "\u201D\uFF0C\u8BF7\u4FEE\u6539\u540E\u4F7F\u7528");
+    var target = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'method';
+    return "The ".concat(target, " has been renamed to \"").concat(newName, "\", please use after modification");
   }
 };
 // CONCATENATED MODULE: ./lib/mixins/i18n.js
@@ -1436,15 +1412,15 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symb
 
 function i18n_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
- // 语言配置
+ // language configuration
 
- // 国际化
+ // globalization
 
 /* harmony default export */ var i18n = ({
   computed: {
-    // 语言内容
+    // language content
     langs: function langs() {
-      var lang = this.lang; // 自动识别浏览器语言
+      var lang = this.lang; // Automatically identify browser language
 
       if (lang === 'auto') {
         lang = (navigator.language || navigator.userLanguage).substr(0, 2);
@@ -1452,22 +1428,22 @@ function i18n_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
       if (typeof lang === 'string') {
         lang = config_lang[lang];
-      } // 找不到语言配置，则使用英文
+      } // language configuration not found, use English
 
 
-      if (!lang) lang = config_lang['en'];
+      if (!lang) lang = config_lang.en;
       return lang;
     }
   },
   methods: {
-    // 获取国际化内容
+    // Get internationalized content
     i18nText: function i18nText(text) {
       var _this$i18nParse = this.i18nParse(text),
           key = _this$i18nParse.key,
           params = _this$i18nParse.params;
 
       if (key) {
-        var hasI18nProp = typeof this.i18n === 'function'; // 未配置 i18n 方法则警告
+        var hasI18nProp = typeof this.i18n === 'function'; // Warn if i18n method is not configured
 
         if (!this._hasI18nPropWarn) {
           warn(hasI18nProp, this.langs.msg.i18nProp);
@@ -1481,13 +1457,13 @@ function i18n_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
       return text;
     },
-    // 解析国际化
+    // Parsing internationalization
     i18nParse: function i18nParse(text) {
       var key;
-      var params; // 获取国际化配置
+      var params; // Get internationalization configuration
 
       if (typeof text === 'string') {
-        // 字符串方式配置：'i18n:custom.lang.key'
+        // String configuration: 'i18n:custom.lang.key'
         var res = /^i18n:([^\s]+)$/.exec(text);
 
         if (res) {
@@ -1495,7 +1471,7 @@ function i18n_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           params = [];
         }
       } else if (Array.isArray(text)) {
-        // 数组方式配置：['tab.i18n.key', 'param1', 'param2', ...]
+        // Array configuration: ['tab.i18n.key', 'param1', 'param2', ...]
         ;
 
         var _text = _toArray(text);
@@ -1591,12 +1567,12 @@ function operate_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function operate_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { operate_typeof = function _typeof(obj) { return typeof obj; }; } else { operate_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return operate_typeof(obj); }
 
- // 获取关闭参数
+ // get shutdown parameter
 
 function getCloseArgs(args) {
   args = Array.from(args);
   var argsLen = args.length;
-  var arg = args[0]; // 首个选项
+  var arg = args[0]; // get shutdown parameter
 
   if (!argsLen) {
     // close()
@@ -1616,22 +1592,22 @@ function getCloseArgs(args) {
       to: to
     };
   }
-} // 路径是否一致
+} // Is the path consistent or not?
 
 
 function equalPath(path1, path2) {
   var reg = /\/$/;
   return path1.replace(reg, '') === path2.replace(reg, '');
-} // 页签操作
+} // tab operation
 
 
 /* harmony default export */ var operate = ({
   methods: {
     /**
-     * 打开页签（默认全新打开）
-     * @param {location} path 页签路径
-     * @param {Boolean} [isReplace = false] 是否 replace 方式替换当前路由
-     * @param {Boolean | String} [refresh = true] 是否全新打开，如果为 `sameTab` 则仅同一个页签才全新打开
+     * Open the tab (newly opened by default)
+     * @param {location} path tab path
+     * @param {Boolean} [isReplace = false] whether replace way to replace the current route
+     * @param {Boolean | String} [refresh = true] Whether to open a new one, if it is `sameTab`, only the same tab will be opened a new one
      */
     open: function open(path) {
       var _arguments = arguments,
@@ -1647,7 +1623,7 @@ function equalPath(path1, path2) {
                 refresh = _arguments.length > 2 && _arguments[2] !== undefined ? _arguments[2] : true;
                 curId = _this.activeTabId;
                 tarId = _this.getRouteKey(path);
-                isSameTab = equalPath(curId, tarId); // 打开路由与当前路由相同页签才刷新
+                isSameTab = equalPath(curId, tarId); // Refresh only when the route is opened on the same tab as the current route
 
                 refresh === 'sameTab' && (refresh = isSameTab);
                 refresh && _this.refresh(path, false);
@@ -1676,7 +1652,7 @@ function equalPath(path1, path2) {
         }, _callee, null, [[7, 12, 14, 17]]);
       }))();
     },
-    // 移除 tab 项
+    // remove tab item
     removeTab: function removeTab(id) {
       var _arguments2 = arguments,
           _this2 = this;
@@ -1691,7 +1667,7 @@ function equalPath(path1, path2) {
                 items = _this2.items;
                 idx = items.findIndex(function (item) {
                   return item.id === id;
-                }); // 最后一个页签不允许关闭
+                }); // The last tab is not allowed to close
 
                 if (!(!force && _this2.keepLastTab && items.length === 1)) {
                   _context2.next = 5;
@@ -1710,7 +1686,7 @@ function equalPath(path1, path2) {
                 return _this2.leavePage(id, 'close');
 
               case 8:
-                // 承诺关闭后移除页签和缓存
+                // Promise to remove tabs and cache after closing
                 _this2.$alive.remove(id);
 
                 idx > -1 && items.splice(idx, 1);
@@ -1725,16 +1701,16 @@ function equalPath(path1, path2) {
     },
 
     /**
-     * 关闭页签
-     * 支持以下方式调用：
-     *   1. this.$tabs.close({id, path, match, force, to, refresh})
-     *   2. this.$tabs.close(path, to)
-     * @param {String} id 通过页签 id 关闭
-     * @param {location} path 通过路由路径关闭页签，如果未配置 id 和 path 则关闭当前页签
-     * @param {Boolean} [match = true] path 方式关闭时，是否匹配 path 完整路径
-     * @param {Boolean} [force = true] 是否强制关闭
-     * @param {location} to 关闭后跳转的地址，为 null 则不跳转
-     * @param {Boolean} [refresh = false] 是否全新打开跳转地址
+     * Close tab
+     * Support calling in the following ways:
+     * 1. this.$tabs.close({id, path, match, force, to, refresh})
+     * 2. this. $tabs. close(path, to)
+     * @param {String} id close by tab id
+     * @param {location} path Close the tab through the routing path, if the id and path are not configured, close the current tab
+     * @param {Boolean} [match = true] When the path mode is disabled, whether to match the full path of path
+     * @param {Boolean} [force = true] Whether to force close
+     * @param {location} to the address to jump after closing, if it is null, it will not jump
+     * @param {Boolean} [refresh = false] Whether to open the jump address newly
      */
     close: function close() {
       var _arguments3 = arguments,
@@ -1747,9 +1723,9 @@ function equalPath(path1, path2) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                // 解析参数
+                // parsing parameters
                 _getCloseArgs = getCloseArgs(_arguments3), id = _getCloseArgs.id, path = _getCloseArgs.path, _getCloseArgs$match = _getCloseArgs.match, match = _getCloseArgs$match === void 0 ? true : _getCloseArgs$match, _getCloseArgs$force = _getCloseArgs.force, force = _getCloseArgs$force === void 0 ? true : _getCloseArgs$force, to = _getCloseArgs.to, _getCloseArgs$refresh = _getCloseArgs.refresh, refresh = _getCloseArgs$refresh === void 0 ? false : _getCloseArgs$refresh;
-                activeTabId = _this3.activeTabId, items = _this3.items; // 根据 path 获取 id
+                activeTabId = _this3.activeTabId, items = _this3.items; // get id according to path
 
                 if (!(!id && path)) {
                   _context3.next = 6;
@@ -1766,12 +1742,12 @@ function equalPath(path1, path2) {
                 return _context3.abrupt("return");
 
               case 6:
-                // 默认当前页签
+                // default current tab
                 if (!id) id = activeTabId;
                 _context3.prev = 7;
                 idx = items.findIndex(function (item) {
                   return item.id === id;
-                }); // 移除页签
+                }); // remove tab
 
                 _context3.next = 11;
                 return _this3.removeTab(id, force);
@@ -1785,7 +1761,7 @@ function equalPath(path1, path2) {
                 return _context3.abrupt("return");
 
               case 13:
-                // 如果关闭当前页签，则打开后一个页签
+                // If the current tab is closed, open the next tab
                 if (!to && activeTabId === id) {
                   nextTab = items[idx] || items[idx - 1];
                   to = nextTab ? nextTab.to : _this3.defaultPath;
@@ -1811,7 +1787,7 @@ function equalPath(path1, path2) {
         }, _callee3, null, [[7, 17]]);
       }))();
     },
-    // 通过页签 id 关闭页签
+    // Close the tab by the tab id
     closeTab: function closeTab() {
       var _arguments4 = arguments,
           _this4 = this;
@@ -1825,14 +1801,14 @@ function equalPath(path1, path2) {
                 id = _arguments4.length > 0 && _arguments4[0] !== undefined ? _arguments4[0] : _this4.activeTabId;
                 to = _arguments4.length > 1 ? _arguments4[1] : undefined;
                 force = _arguments4.length > 2 && _arguments4[2] !== undefined ? _arguments4[2] : false;
-
-                _this4.close({
+                _context4.next = 5;
+                return _this4.close({
                   id: id,
                   to: to,
                   force: force
                 });
 
-              case 4:
+              case 5:
               case "end":
                 return _context4.stop();
             }
@@ -1842,10 +1818,10 @@ function equalPath(path1, path2) {
     },
 
     /**
-     * 通过路由地址刷新页签
-     * @param {location} path 需要刷新的地址
-     * @param {Boolean} [match = true] 是否匹配 target 完整路径
-     * @param {Boolean} [force = true] 是否强制刷新
+     * Refresh the tab through the routing address
+     * @param {location} path The address that needs to be refreshed
+     * @param {Boolean} [match = true] whether to match the full path of target
+     * @param {Boolean} [force = true] Whether to force refresh
      */
     refresh: function refresh(path) {
       var match = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -1853,7 +1829,7 @@ function equalPath(path1, path2) {
       var id = path && this.getIdByPath(path, match) || undefined;
       this.refreshTab(id, force);
     },
-    // 刷新指定页签
+    // Refresh the specified tab
     refreshTab: function refreshTab() {
       var _arguments5 = arguments,
           _this5 = this;
@@ -1897,8 +1873,8 @@ function equalPath(path1, path2) {
     },
 
     /**
-     * 刷新所有页签
-     * @param {Boolean} [force = false] 是否强制刷新，如果强制则忽略页面 beforePageLeave
+     * Refresh all tabs
+     * @param {Boolean} [force = false] Whether to force refresh, if forced, ignore the page beforePageLeave
      */
     refreshAll: function refreshAll() {
       var _arguments6 = arguments,
@@ -1955,20 +1931,20 @@ function equalPath(path1, path2) {
     },
 
     /**
-     * 重置 RouterTab 到默认状态，关闭所有页签并清理缓存页签数据
-     * @param {location} [to = this.defaultPath] 重置后跳转页面
+     * Reset RouterTab to default state, close all tabs and clear cached tab data
+     * @param {location} [to = this.defaultPath] Jump page after reset
      */
     reset: function reset() {
       var _this7 = this;
 
       var to = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.defaultPath;
-      // 遍历删除缓存
+      // traverse delete cache
       this.items.forEach(function (_ref) {
         var id = _ref.id;
         return _this7.$alive.remove(id);
-      }); // 清除缓存页签
+      }); // clear cache tab
 
-      this.clearTabsStore(); // 初始页签数据
+      this.clearTabsStore(); // Initial tab data
 
       this.initTabs();
       this.open(to, true, true);
@@ -1982,7 +1958,7 @@ function pageLeave_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, 
 
 function pageLeave_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { pageLeave_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { pageLeave_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
- // 路由导航守卫
+ // Routing Navigation Guard
 
 var pageLeave_leaveGuard = function leaveGuard(router) {
   return function (to, from, next) {
@@ -2005,15 +1981,12 @@ var pageLeave_leaveGuard = function leaveGuard(router) {
     var id, type;
 
     if (alivePath && alivePath !== matched.alivePath) {
-      // 页签地址被替换：to 存在缓存但缓存路由不一致
       type = 'replace';
       id = toId;
     } else if ($alive.basePath !== matched.basePath) {
-      // 离开页签组件：to 不在当前页签组件路由下
       type = 'leave';
       id = $tabs.activeTabId;
     } else if (!fromCache && fromId !== toId) {
-      // 当前组件未缓存时离开页签
       type = 'leave';
       id = $tabs.activeTabId;
     }
@@ -2026,18 +1999,19 @@ var pageLeave_leaveGuard = function leaveGuard(router) {
       next();
     }
   };
-}; // 页面离开
+}; // page leave
 
 /* harmony default export */ var mixins_pageLeave = ({
   created: function created() {
     var $router = this.$router;
-    if ($router._RouterTabInit) return; // 初始化路由导航守卫
+    if ($router._RouterTabInit) return; // Initialize routing and navigation guards
 
     $router.beforeEach(pageLeave_leaveGuard($router));
     $router._RouterTabInit = true;
   },
   methods: {
-    // 页面离开 Promise
+    // page leaves Promise
+    // eslint-disable-next-line require-await
     leavePage: function leavePage(id, type) {
       var _this = this;
 
@@ -2050,10 +2024,10 @@ var pageLeave_leaveGuard = function leaveGuard(router) {
               case 0:
                 tab = _this.items.find(function (item) {
                   return item.id === id;
-                }); // 当前页签
+                }); // current tab
 
-                _ref2 = _this.$alive.cache[id] || emptyObj, vm = _ref2.vm; // 缓存数据
-                // 未开启缓存时，获取当前页面组件实例
+                _ref2 = _this.$alive.cache[id] || emptyObj, vm = _ref2.vm; // cache data
+                // When the cache is not enabled, get the current page component instance
 
                 if (!vm && _this.activeTabId === id) {
                   try {
@@ -2091,11 +2065,11 @@ var pageLeave_leaveGuard = function leaveGuard(router) {
   }
 });
 // CONCATENATED MODULE: ./lib/util/decorator.js
-/* 装饰器 */
+/* decorator */
 
 /**
- * 防抖
- * @param {number} [delay=200] 延迟
+ * anti shake
+ * @param {number} [delay=200] Delay
  */
 var debounce = function debounce() {
   var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 200;
@@ -2127,7 +2101,7 @@ function scroll_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg
 
 function scroll_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { scroll_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { scroll_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
- // 页签滚动
+ // tab scrolling
 
 /* harmony default export */ var mixins_scroll = ({
   watch: {
@@ -2166,11 +2140,11 @@ function scroll_asyncToGenerator(fn) { return function () { var self = this, arg
     }
   },
   mounted: function mounted() {
-    // 浏览器窗口大小改变时调整Tab滚动显示
+    // Adjust the tab scrolling display when the browser window size changes
     window.addEventListener('resize', this.adjust);
   },
   destroyed: function destroyed() {
-    // 销毁后移除监听事件
+    // Remove the listening event after destruction
     window.removeEventListener('resize', this.adjust);
   },
   methods: (_dec = debounce(), (_obj = {
@@ -2178,39 +2152,52 @@ function scroll_asyncToGenerator(fn) { return function () { var self = this, arg
       if (!this.$el) return;
       var scroll = this.$refs.scroll;
       var cur = this.$el.querySelector('.router-tab__item.is-active');
-      if (scroll && cur && !scroll.isInView(cur)) scroll.scrollIntoView(cur); // 关闭右键菜单
+      if (scroll && cur && !scroll.isInView(cur)) scroll.scrollIntoView(cur); // close right click menu
 
       this.hideContextmenu();
     },
-    // 页签过渡
+    // tab transition
     onTabTrans: function onTabTrans() {
       this.adjust();
     }
   }, (_applyDecoratedDescriptor(_obj, "adjust", [_dec], Object.getOwnPropertyDescriptor(_obj, "adjust"), _obj)), _obj))
 });
 // CONCATENATED MODULE: ./lib/mixins/restore.js
-// 页签刷新后还原
+// Restore after tab refresh
 /* harmony default export */ var restore = ({
   computed: {
-    // 刷新还原存储 key
+    // Refresh restore storage key
     restoreKey: function restoreKey() {
       var restore = this.restore,
           basePath = this.basePath;
       if (!restore || typeof sessionStorage === 'undefined') return '';
-      var key = "RouterTab:restore:".concat(basePath);
+      var key = "__t::".concat(basePath);
       typeof restore === 'string' && (key += ":".concat(restore));
       return key;
+    },
+    activeTabKey: function activeTabKey() {
+      var restoreKey = this.restoreKey;
+      return "__a".concat(restoreKey);
+    }
+  },
+  beforeUpdate: function beforeUpdate() {
+    if (!this.items.length) {
+      sessionStorage.removeItem(this.activeTabKey);
+    } else {
+      var _this$$tabs;
+
+      (_this$$tabs = this.$tabs) === null || _this$$tabs === void 0 ? void 0 : _this$$tabs.saveActiveTab();
     }
   },
   mounted: function mounted() {
-    // 页面重载前保存页签数据
+    // Save tab data before page reload
     window.addEventListener('beforeunload', this.saveTabs);
   },
   destroyed: function destroyed() {
     window.removeEventListener('beforeunload', this.saveTabs);
   },
   watch: {
-    // 监听 restoreKey 变化自动还原页签
+    // Monitor the change of restoreKey to automatically restore the tab
     restoreKey: function restoreKey() {
       if (this.restoreWatch) {
         var activeTab = this.activeTab;
@@ -2223,18 +2210,23 @@ function scroll_asyncToGenerator(fn) { return function () { var self = this, arg
     }
   },
   methods: {
-    // 保存页签数据
     saveTabs: function saveTabs() {
-      this.restoreKey && sessionStorage.setItem(this.restoreKey, JSON.stringify(this.items));
+      var restoreKey = this.restoreKey,
+          items = this.items;
+      restoreKey && sessionStorage.setItem(this.restoreKey, JSON.stringify(items));
     },
-    // 清除页签缓存数据
+    saveActiveTab: function saveActiveTab() {
+      var activeTab = this.activeTab,
+          activeTabKey = this.activeTabKey,
+          restoreKey = this.restoreKey;
+      restoreKey && activeTabKey && sessionStorage.setItem(activeTabKey, JSON.stringify(activeTab));
+    },
     clearTabsStore: function clearTabsStore() {
       this.restoreKey && sessionStorage.removeItem(this.restoreKey);
     },
-    // 从缓存读取页签
     restoreTabs: function restoreTabs() {
       if (!this.restoreKey) return false;
-      var tabs = sessionStorage.getItem(this.restoreKey);
+      var tabs = this.getTabs();
       var hasStore = false;
 
       try {
@@ -2247,25 +2239,33 @@ function scroll_asyncToGenerator(fn) { return function () { var self = this, arg
       } catch (e) {}
 
       return hasStore;
+    },
+    getTabs: function getTabs() {
+      var tabs = sessionStorage.getItem(this.restoreKey);
+      return tabs;
+    },
+    getLastActiveTab: function getLastActiveTab() {
+      var activeTabKey = this.activeTabKey;
+      return sessionStorage.getItem(activeTabKey);
     }
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6720b08a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/RouterAlive.vue?vue&type=template&id=279e5a35&
-var RouterAlivevue_type_template_id_279e5a35_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"router-alive"},[_c('transition',_vm._b({attrs:{"appear":""},on:{"after-enter":_vm.onTrans,"after-leave":_vm.onTrans}},'transition',_vm.pageTrans,false),[_c('keep-alive',{attrs:{"max":_vm.max}},[(_vm.alive && !_vm.onRefresh)?_c('router-view',_vm._g({key:_vm.key,ref:"page",class:_vm.pageClass,on:{"page-loaded":_vm.onPageLoaded}},_vm.hooks)):_vm._e()],1)],1),_c('transition',_vm._b({attrs:{"appear":""},on:{"after-enter":_vm.onTrans,"after-leave":_vm.onTrans}},'transition',_vm.pageTrans,false),[(!_vm.alive && !_vm.onRefresh)?_c('router-view',{key:_vm.key,ref:"page",class:_vm.pageClass}):_vm._e()],1)],1)}
-var RouterAlivevue_type_template_id_279e5a35_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4ab3c797-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/RouterAlive.vue?vue&type=template&id=6b20870c&
+var RouterAlivevue_type_template_id_6b20870c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"router-alive"},[_c('transition',_vm._b({attrs:{"appear":""},on:{"after-enter":_vm.onTrans,"after-leave":_vm.onTrans}},'transition',_vm.pageTrans,false),[_c('keep-alive',{attrs:{"max":_vm.max}},[(_vm.alive && !_vm.onRefresh)?_c('router-view',_vm._g({key:_vm.key,ref:"page",class:_vm.pageClass,on:{"page-loaded":_vm.onPageLoaded}},_vm.hooks)):_vm._e()],1)],1),_c('transition',_vm._b({attrs:{"appear":""},on:{"after-enter":_vm.onTrans,"after-leave":_vm.onTrans}},'transition',_vm.pageTrans,false),[(!_vm.alive && !_vm.onRefresh)?_c('router-view',{key:_vm.key,ref:"page",class:_vm.pageClass}):_vm._e()],1)],1)}
+var RouterAlivevue_type_template_id_6b20870c_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./lib/components/RouterAlive.vue?vue&type=template&id=279e5a35&
+// CONCATENATED MODULE: ./lib/components/RouterAlive.vue?vue&type=template&id=6b20870c&
 
 // CONCATENATED MODULE: ./lib/config/rules.js
- // 内置规则
+ // built-in rules
 
 /* harmony default export */ var rules = ({
-  // 地址，params 不一致则独立缓存
+  // Address, params inconsistent cache independently
   path: function path(route) {
     return route.path;
   },
-  // 完整地址 (忽略 hash)，params 或 query 不一致则独立缓存
+  // Complete address (ignore hash), if params or query are inconsistent, cache independently
   fullpath: function fullpath(route) {
     return prunePath(route.fullPath);
   }
@@ -2290,14 +2290,14 @@ function RouteMatch_iterableToArrayLimit(arr, i) { var _i = arr == null ? null :
 function RouteMatch_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
- // 解析路由 key
+ // resolve route key
 
 function parseRouteKey($route, route, key) {
   var defaultKey = route.path;
   if (!key) return defaultKey;
 
   if (typeof key === 'string') {
-    // 规则
+    // rule
     var rule = rules[key.toLowerCase()];
     return rule ? rule($route) : key;
   }
@@ -2307,7 +2307,7 @@ function parseRouteKey($route, route, key) {
   }
 
   return defaultKey;
-} // 解析匹配的路径
+} // resolve matching paths
 
 
 function parsePath(path, params) {
@@ -2318,7 +2318,7 @@ function parsePath(path, params) {
 
     return p.replace(':' + key, val);
   }, path);
-} // 匹配路由数据
+} // Match Routing Data
 
 
 var RouteMatch_RouteMatch = /*#__PURE__*/function () {
@@ -2327,15 +2327,15 @@ var RouteMatch_RouteMatch = /*#__PURE__*/function () {
 
     this.vm = vm;
     this.$route = $route;
-  } // 设置路由
+  } // set routing
 
 
   _createClass(RouteMatch, [{
     key: "$route",
-    get: // 获取路由
+    get: // get route
     function get() {
       return this._$route || this.vm.$route;
-    } // 页面路由索引
+    } // Page Routing Index
     ,
     set: function set($route) {
       if ($route && !$route.matched) {
@@ -2349,13 +2349,13 @@ var RouteMatch_RouteMatch = /*#__PURE__*/function () {
     key: "routeIndex",
     get: function get() {
       return this.vm.routeIndex;
-    } // 下级路由
+    } // Subordinate routing
 
   }, {
     key: "route",
     get: function get() {
       return this.$route.matched[this.routeIndex];
-    } // 根路径
+    } // root path
 
   }, {
     key: "basePath",
@@ -2364,7 +2364,7 @@ var RouteMatch_RouteMatch = /*#__PURE__*/function () {
       var baseRoute = this.$route.matched[this.routeIndex - 1] || {};
       var path = baseRoute.path;
       return path && parsePath(path, this.$route.params) || '/';
-    } // 缓存路径，用于判断是否复用
+    } // Cache path, used to determine whether to reuse
 
   }, {
     key: "alivePath",
@@ -2376,13 +2376,13 @@ var RouteMatch_RouteMatch = /*#__PURE__*/function () {
       }
 
       return prunePath($route.fullPath);
-    } // 路由元
+    } // nested routes
 
   }, {
     key: "meta",
     get: function get() {
       var route = this.route,
-          $nuxt = this.vm.$nuxt; // Nuxt 优先从页面配置获取 meta
+          $nuxt = this.vm.$nuxt; // Nuxt gets meta from page configuration first
 
       if ($nuxt) {
         try {
@@ -2399,27 +2399,27 @@ var RouteMatch_RouteMatch = /*#__PURE__*/function () {
       }
 
       return route && route.meta || {};
-    } // 是否嵌套路由
+    } // Whether to nest routes
 
   }, {
     key: "nest",
     get: function get() {
       return this.$route.matched.length > this.routeIndex + 1;
-    } // 路由 key
+    } // routing key
 
   }, {
     key: "key",
     get: function get() {
       if (!this.route) return '';
       return parseRouteKey(this.$route, this.route, this.meta.key);
-    } // 是否缓存
+    } // Whether to cache
 
   }, {
     key: "alive",
     get: function get() {
       var keepAlive = this.meta.keepAlive;
       return typeof keepAlive === 'boolean' ? keepAlive : this.vm.keepAlive;
-    } // 是否复用组件
+    } // Whether to reuse components
 
   }, {
     key: "reusable",
@@ -2495,66 +2495,67 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
- // 页面监听钩子
+ // page monitoring hook
 
 var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed'];
 /**
- * 路由缓存控件
+ * Route Cache Control
  */
 
 /* harmony default export */ var RouterAlivevue_type_script_lang_js_ = ({
   name: 'RouterAlive',
   provide: function provide() {
-    // 提供实例给子组件调用
+    // Provide an instance to the child component to call
     return {
       RouterAlive: this
     };
   },
   props: {
-    // 默认是否开启缓存
+    // Whether to enable caching by default
     keepAlive: {
       type: Boolean,
       default: false
     },
-    // 是否复用路由组件
+    // Whether to reuse routing components
     reuse: {
       type: Boolean,
       default: false
     },
-    // 最大缓存数，0 则不限制
+    // The maximum number of caches, 0 is unlimited
     max: {
       type: Number,
       default: 0
     },
-    // 页面 class
+    // page class
     pageClass: {
       type: [Array, Object, String],
       default: 'router-alive-page'
     },
-    // 页面滚动元素选择器
+    // Page Scroll Element Selector
     pageScroller: {
       type: String,
       default: ''
     },
-    // 过渡效果
+    // transition effect
+    // eslint-disable-next-line vue/require-default-prop
     transition: {
       type: [String, Object]
     }
   },
   data: function data() {
-    // 缓存记录
+    // cache record
     this.cache = {};
     return {
-      // 路由匹配信息
+      // route matching information
       routeMatch: new RouteMatch_RouteMatch(this),
-      // 页面路由索引
+      // Page Routing Index
       routeIndex: this.getRouteIndex(),
-      // 是否正在更新
+      // Is it being updated
       onRefresh: false
     };
   },
   computed: _objectSpread(_objectSpread({}, mapGetters('routeMatch', ['key', 'meta', 'nest', 'alive', 'reusable', 'basePath', 'alivePath'])), {}, {
-    // 监听子页面钩子
+    // Listen to subpage hooks
     hooks: function hooks() {
       var _this = this;
 
@@ -2566,7 +2567,7 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
         return events;
       }, {});
     },
-    // 页面过渡
+    // Listen to subpage hooks
     pageTrans: function pageTrans() {
       return getTransOpt(this.transition);
     }
@@ -2575,7 +2576,7 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
     // 监听路由
     $route: {
       handler: function handler($route, old) {
-        // 组件就绪
+        // component ready
         if (!old) this.$emit('ready', this);
         if (!$route.matched.length) return;
         var key = this.key,
@@ -2586,12 +2587,12 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
         var cacheItem = this.cache[key] || {};
         var cacheAlivePath = cacheItem.alivePath,
             cacheFullPath = cacheItem.fullPath,
-            cacheVM = cacheItem.vm; // 不复用且路由改变则清理组件缓存
+            cacheVM = cacheItem.vm; // Clean up the component cache if it is not reused and the route changes
 
         if (cacheAlivePath && !reusable && cacheAlivePath !== alivePath) {
           cacheAlivePath = '';
           this.refresh(key);
-        } // 嵌套路由，地址跟缓存不一致
+        } // Nested routing, the address is inconsistent with the cache
 
 
         if (nest && cacheVM && $route.fullPath !== cacheFullPath) {
@@ -2600,11 +2601,11 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
           if (oldKey !== key) {
             this.nestForceUpdate = true;
           }
-        } // 类型：更新或者新建缓存
+        } // Type: update or new cache
 
 
         var type = cacheAlivePath ? 'update' : 'create';
-        this.$emit('change', type, this.routeMatch); // 更新缓存路径
+        this.$emit('change', type, this.routeMatch); // update cache path
 
         if (alive) {
           cacheItem.fullPath = $route.fullPath;
@@ -2614,10 +2615,10 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
     }
   },
   mounted: function mounted() {
-    // 获取 keepAlive 组件实例
+    // Get the keepAlive component instance
     this.$refs.alive = this._vnode.children[0].child._vnode.componentInstance;
   },
-  // 销毁后清理
+  // cleanup after destruction
   destroyed: function destroyed() {
     this.cache = null;
     this.routeMatch = null;
@@ -2625,10 +2626,10 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
     this.$refs.alive = null;
   },
   methods: {
-    // 获取页面路由索引
+    // Get page routing index
     getRouteIndex: function getRouteIndex() {
       var cur = this;
-      var depth = -1; // 路由深度
+      var depth = -1; // routing depth
 
       while (cur && depth < 0) {
         var _ref = cur.$vnode || {},
@@ -2643,20 +2644,21 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
 
       return depth + 1;
     },
-    // 移除缓存
+    // remove cache
     remove: function remove() {
       var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.key;
       var $alive = this.$refs.alive;
       if (!$alive) return;
       var cacheItem = this.cache[key];
       var cache = $alive.cache,
-          keys = $alive.keys; // 销毁缓存组件实例，清理 RouterAlive 缓存记录
+          keys = $alive.keys; // Destroy the cache component instance and clear the RouterAlive cache records
 
       if (cacheItem) {
         cacheItem.vm.$destroy();
         cacheItem.vm = null;
         this.cache[key] = null;
-      } // 清理 keepAlive 缓存记录
+      } // Clean up keepAlive cache records
+      // eslint-disable-next-line array-callback-return
 
 
       Object.entries(cache).find(function (_ref2) {
@@ -2669,7 +2671,7 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
         var vm = item === null || item === void 0 ? void 0 : item.componentInstance;
 
         if ((vm === null || vm === void 0 ? void 0 : (_vm$$vnode = vm.$vnode) === null || _vm$$vnode === void 0 ? void 0 : (_vm$$vnode$data = _vm$$vnode.data) === null || _vm$$vnode$data === void 0 ? void 0 : _vm$$vnode$data.key) === key) {
-          // 销毁组件实例
+          // destroy component instance
           vm.$destroy();
           cache[id] = null;
 
@@ -2679,59 +2681,59 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
         }
       });
     },
-    // 刷新
+    // destroy component instance
     refresh: function refresh() {
       var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.key;
-      this.remove(key); // 非当前缓存，直接移除
+      this.remove(key); // Not the current cache, remove it directly
 
       if (key === this.key) {
         this.reload();
       }
     },
-    // 重新加载
+    // Reload
     reload: function reload() {
       if (this.onRefresh) return;
       this.onRefresh = true;
     },
-    // 缓存页面组件钩子
+    // Cache page component hook
     pageHook: function pageHook(hook) {
       var handler = this["pageHook:".concat(hook)];
       if (typeof handler === 'function') handler();
     },
-    // 页面创建
+    // page creation
     'pageHook:created': function pageHookCreated() {
       this.cache[this.key] = {
         alivePath: this.alivePath,
         fullPath: this.$route.fullPath
       };
     },
-    // 页面挂载
+    // page mount
     'pageHook:mounted': function pageHookMounted() {
-      this.cache[this.key].vm = this.$refs.page; // 重置初始滚动位置
+      this.cache[this.key].vm = this.$refs.page; // reset initial scroll position
 
       this.resetScrollPosition();
     },
-    // 页面激活
+    // page activation
     'pageHook:activated': function pageHookActivated() {
-      var pageVm = this.$refs.page; // 热重载更新
+      var pageVm = this.$refs.page; // hot reload update
 
-      if (this.checkHotReloading()) return; // 嵌套路由缓存导致页面不匹配时强制更新
+      if (this.checkHotReloading()) return; // Forced updates when nested route caches result in page mismatches
 
       if (this.nestForceUpdate) {
         delete this.nestForceUpdate;
         pageVm.$forceUpdate();
-      } // 还原滚动位置
+      } // restore scroll position
 
 
       this.restoreScrollPosition();
     },
-    // 页面失活
+    // page deactivation
     'pageHook:deactivated': function pageHookDeactivated() {
-      if (this.checkHotReloading()) return; // 保存滚动位置
+      if (this.checkHotReloading()) return; // save scroll position
 
       this.saveScrollPosition();
     },
-    // 页面销毁后清理 cache
+    // Clean up after page destruction cache
     'pageHook:destroyed': function pageHookDestroyed() {
       var _this2 = this;
 
@@ -2752,7 +2754,7 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
                 return _context.abrupt("return");
 
               case 4:
-                // 清理已销毁页面的缓存信息
+                // Clear cached information for destroyed pages
                 Object.entries(_this2.cache).forEach(function (_ref4) {
                   var _ref5 = RouterAlivevue_type_script_lang_js_slicedToArray(_ref4, 2),
                       key = _ref5[0],
@@ -2774,16 +2776,16 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
         }, _callee);
       }))();
     },
-    // 页面过渡后结束刷新状态
+    // End refresh state after page transition
     onTrans: function onTrans() {
       if (this.onRefresh) {
         this.onRefresh = false;
         this.$emit('change', 'create', this.routeMatch);
       }
     },
-    // 匹配路由信息
+    // Match routing information
     matchRoute: function matchRoute($route) {
-      var matched = this._match; // 当前路由
+      var matched = this._match; // Match routing information
 
       if ($route === this.$route || $route.fullPath === this.$route.fullPath || $route === this.$route.fullPath) {
         return this.routeMatch;
@@ -2796,11 +2798,11 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
 
       return this._match = new RouteMatch_RouteMatch(this, $route);
     },
-    // 检测热重载
+    // Detect hot reload
     checkHotReloading: function checkHotReloading() {
       var pageVm = this.$refs.page;
       var lastCid = pageVm._lastCtorId;
-      var cid = pageVm._lastCtorId = getCtorId(pageVm); // 热重载更新
+      var cid = pageVm._lastCtorId = getCtorId(pageVm); // hot reload update
 
       if (lastCid && lastCid !== cid) {
         this.refresh();
@@ -2809,16 +2811,16 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
 
       return false;
     },
-    // 获取滚动元素
+    // Get the scroll element
     getScroller: function getScroller(selector) {
       return selector.startsWith('$') ? document.querySelector(selector.replace(/^\$/, '')) : this.$el.querySelector(selector);
     },
-    // 保存滚动位置
+    // Get the scroll element
     saveScrollPosition: function saveScrollPosition() {
       var _this3 = this;
 
       var pageVm = this.$refs.page;
-      if (!pageVm) return; // 页面内部配置的滚动元素
+      if (!pageVm) return; // Scrolling elements configured inside the page
 
       var pageScroller = pageVm.$vnode.componentOptions.Ctor.options.pageScroller;
 
@@ -2828,15 +2830,15 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
 
       if (!Array.isArray(pageScroller)) {
         pageScroller = [];
-      } // 默认保存页面根节点位置
+      } // Save the page root node position by default
 
 
-      pageScroller.push('.' + this.pageClass); // 添加全局的滚动元素配置
-      // 组件外部选择器使用 $ 前缀区分
+      pageScroller.push('.' + this.pageClass); // Add global scroll element configuration
+      // Component external selectors use the $ prefix to distinguish
 
       if (this.pageScroller) {
         pageScroller.push('$' + this.pageScroller);
-      } // 记录位置
+      } // record location
 
 
       var position = pageScroller.reduce(function (pos, selector) {
@@ -2853,7 +2855,7 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
       }, {});
       pageVm._pageScrollPosition = position;
     },
-    // 还原滚动位置
+    // restore scroll position
     restoreScrollPosition: function restoreScrollPosition() {
       var _this4 = this;
 
@@ -2873,7 +2875,7 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
         }
       });
     },
-    // 重置全局滚动位置
+    // reset global scroll position
     resetScrollPosition: function resetScrollPosition() {
       if (!this.pageScroller) return;
       var el = this.getScroller('$' + this.pageScroller);
@@ -2881,7 +2883,7 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
       el.scrollLeft = 0;
       el.scrollTop = 0;
     },
-    // 页面数据加载成功
+    // Page data loaded successfully
     onPageLoaded: function onPageLoaded() {
       var _this5 = this;
 
@@ -2894,7 +2896,7 @@ var PAGE_HOOKS = ['created', 'mounted', 'activated', 'deactivated', 'destroyed']
                 return _this5.$nextTick();
 
               case 2:
-                // 页面数据加载成功后还原滚动位置
+                // Restore the scroll position after the page data is loaded successfully
                 _this5.restoreScrollPosition();
 
               case 3:
@@ -3019,8 +3021,8 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   components_RouterAlivevue_type_script_lang_js_,
-  RouterAlivevue_type_template_id_279e5a35_render,
-  RouterAlivevue_type_template_id_279e5a35_staticRenderFns,
+  RouterAlivevue_type_template_id_6b20870c_render,
+  RouterAlivevue_type_template_id_6b20870c_staticRenderFns,
   false,
   null,
   null,
@@ -3036,31 +3038,30 @@ function TabItem_objectSpread(target) { for (var i = 1; i < arguments.length; i+
 
 function TabItem_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
- // 拖拽传输数据前缀
+ // Drag and drop transfer data prefix
 
-var TRANSFER_PREFIX = 'RouterTabDragSortIndex:'; // 排序拖拽数据
-// 用以解决双核浏览器兼容模式下无法通过 dataTransfer.getData 获取数据
+var TRANSFER_PREFIX = 'RouterTabDragSortIndex:'; // sort drag data
+// To solve the problem of not being able to obtain data through dataTransfer.getData in dual-core browser compatibility mode // Sort and drag data
 
-var dragSortData = null; // 页签项
-// @vue/component
+var dragSortData = null; // @vue/component
 
 /* harmony default export */ var TabItem = ({
   name: 'TabItem',
   inject: ['$tabs'],
   props: {
-    // 页签原始数据，方便 slot 插槽自定义数据
+    // Tab original data, convenient for slot slot to customize data
     data: {
       type: Object,
       required: true
     },
-    // 页签项索引
+    // eslint-disable-next-line vue/require-default-prop
     index: Number
   },
   data: function data() {
     return {
       onDragSort: false,
-      // 是否正在拖拽
-      isDragOver: false // 是否拖拽经过
+      // is dragging
+      isDragOver: false // Whether to drag through
 
     };
   },
@@ -3074,23 +3075,18 @@ var dragSortData = null; // 页签项
         'is-drag-over': this.isDragOver && !this.onDragSort
       }];
     },
-    // 国际化
     i18nText: function i18nText() {
       return this.$tabs.i18nText;
     },
-    // 未命名页签
     untitled: function untitled() {
       return this.$tabs.langs.tab.untitled;
     },
-    // 页签标题
     title: function title() {
       return this.i18nText(this.data.title) || this.untitled;
     },
-    // 页签提示
     tips: function tips() {
       return this.i18nText(this.data.tips || this.data.title) || this.untitled;
     },
-    // 是否可关闭
     closable: function closable() {
       var _this$$tabs = this.$tabs,
           keepLastTab = _this$$tabs.keepLastTab,
@@ -3099,7 +3095,7 @@ var dragSortData = null; // 页签项
     }
   }),
   methods: {
-    // 插槽默认内容
+    // Slot default content
     slotDefault: function slotDefault() {
       var _this = this;
 
@@ -3122,28 +3118,23 @@ var dragSortData = null; // 页签项
         }
       })];
     },
-    // 关闭当前页签
     close: function close() {
       this.$tabs.closeTab(this.id);
     },
-    // 拖拽
     onDragStart: function onDragStart(e) {
       this.onDragSort = this.$tabs.onDragSort = true;
       dragSortData = TRANSFER_PREFIX + this.index;
       e.dataTransfer.setData('text', dragSortData);
       e.dataTransfer.effectAllowed = 'move';
     },
-    // 拖拽悬浮
     onDragOver: function onDragOver(e) {
       this.isDragOver = true;
       e.dataTransfer.dropEffect = 'move';
     },
-    // 拖拽结束
     onDragEnd: function onDragEnd() {
       this.onDragSort = this.$tabs.onDragSort = false;
       dragSortData = null;
     },
-    // 释放后排序
     onDrop: function onDrop(e) {
       var items = this.$tabs.items;
       var raw = e.dataTransfer.getData('text') || dragSortData;
@@ -3155,8 +3146,8 @@ var dragSortData = null; // 页签项
       items.splice(this.index, 0, tab);
     }
   },
-  // 渲染组件
-  // 使用 jsx render 模式替换 template，避免 Vue 2.5.22 版本不支持子组件使用父组件的 slot 导致出错。
+  // render component
+  // Use the jsx render mode to replace the template to avoid errors caused by Vue 2.5.22 version not supporting child components using parent component slots.
   render: function render() {
     var _this2 = this;
 
@@ -3208,15 +3199,15 @@ var dragSortData = null; // 页签项
     });
   }
 });
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6720b08a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/TabScroll.vue?vue&type=template&id=70362933&
-var TabScrollvue_type_template_id_70362933_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"router-tab__scroll",on:{"wheel":function($event){$event.preventDefault();return _vm.onWheel.apply(null, arguments)},"mouseenter":_vm.update}},[_c('div',{ref:"container",staticClass:"router-tab__scroll-container",class:{ 'is-mobile': _vm.isMobile },on:{"scroll":_vm.update}},[_vm._t("default")],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.hasScroller),expression:"hasScroller"}],ref:"bar",staticClass:"router-tab__scrollbar",class:{ 'is-dragging': _vm.dragData }},[_c('div',{ref:"thumb",staticClass:"router-tab__scrollbar-thumb",style:({
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4ab3c797-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/TabScroll.vue?vue&type=template&id=2951143f&
+var TabScrollvue_type_template_id_2951143f_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"router-tab__scroll",on:{"wheel":function($event){$event.preventDefault();return _vm.onWheel.apply(null, arguments)},"mouseenter":_vm.update}},[_c('div',{ref:"container",staticClass:"router-tab__scroll-container",class:{ 'is-mobile': _vm.isMobile },on:{"scroll":_vm.update}},[_vm._t("default")],2),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.hasScroller),expression:"hasScroller"}],ref:"bar",staticClass:"router-tab__scrollbar",class:{ 'is-dragging': _vm.dragData }},[_c('div',{ref:"thumb",staticClass:"router-tab__scrollbar-thumb",style:({
         width: (_vm.thumbWidth + "px"),
         transform: ("translateX(" + _vm.thumbLeft + "px")
       }),on:{"mousedown":function($event){$event.preventDefault();return _vm.onDragStart.apply(null, arguments)}}})])])}
-var TabScrollvue_type_template_id_70362933_staticRenderFns = []
+var TabScrollvue_type_template_id_2951143f_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./lib/components/TabScroll.vue?vue&type=template&id=70362933&
+// CONCATENATED MODULE: ./lib/components/TabScroll.vue?vue&type=template&id=2951143f&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/TabScroll.vue?vue&type=script&lang=js&
 //
@@ -3249,12 +3240,10 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
 //
 //
 //
- // 滚动条
 
 /* harmony default export */ var TabScrollvue_type_script_lang_js_ = ({
   name: 'TabScroll',
   props: {
-    // 每次滚动距离
     space: {
       type: Number,
       default: 300
@@ -3263,7 +3252,6 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
   data: function data() {
     return {
       isMobile: false,
-      // 是否移动端
       scrollData: {
         clientWidth: 0,
         scrollWidth: 0,
@@ -3273,11 +3261,9 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
     };
   },
   computed: {
-    // 是否拥有滚动条
     hasScroller: function hasScroller() {
       return !this.isMobile && !this.$tabs.onDragSort && this.scrollData.scrollWidth > this.scrollData.clientWidth;
     },
-    // 滑块宽度
     thumbWidth: function thumbWidth() {
       if (!this.hasScroller) return;
       var _this$scrollData = this.scrollData,
@@ -3285,9 +3271,8 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
           scrollWidth = _this$scrollData.scrollWidth;
       return clientWidth / scrollWidth * clientWidth;
     },
-    // 滑块 left
     thumbLeft: function thumbLeft() {
-      if (!this.hasScroller) return; // 拖拽滚动
+      if (!this.hasScroller) return;
 
       if (this.dragData) {
         return this.dragData.thumbLeft;
@@ -3304,14 +3289,13 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
     this.update();
   },
   methods: {
-    // 更新滚动数据
     update: function update() {
       var container = this.$refs.container;
       if (!container) return;
       var clientWidth = container.clientWidth,
           scrollWidth = container.scrollWidth,
-          scrollLeft = container.scrollLeft; // 判断是否移动端
-      // userAgent 中包含 mobile 字段，或者浏览器滚动条宽度为 0
+          scrollLeft = container.scrollLeft; // Determine whether the mobile terminal
+      // userAgent contains mobile field, or browser scroll bar width is 0
 
       this.isMobile = /mobile/i.test(navigator.userAgent) || !getScrollbarWidth();
       Object.assign(this.scrollData, {
@@ -3320,7 +3304,6 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
         scrollLeft: scrollLeft
       });
     },
-    // 滚动到指定位置
     scrollTo: function scrollTo(left) {
       var smooth = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
@@ -3330,7 +3313,6 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
         smooth: smooth
       });
     },
-    // 滚动到元素
     scrollIntoView: function scrollIntoView(el) {
       util_scrollIntoView({
         el: el,
@@ -3338,7 +3320,6 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
         inline: 'center'
       });
     },
-    // 判断子节点是否完全在可视区域
     isInView: function isInView(el) {
       var container = this.$refs.container;
       var offsetLeft = el.offsetLeft;
@@ -3350,7 +3331,6 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
 
       return true;
     },
-    // 页签鼠标滚动
     onWheel: function onWheel(e) {
       var now = +new Date();
       var enable = now - (this.lastWheel || 0) > 100;
@@ -3360,7 +3340,6 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
       var isWheelUp = e.deltaY < 0;
       this.scrollTo(this.$refs.container.scrollLeft + (isWheelUp ? -space : space));
     },
-    // 拖拽
     onDragStart: function onDragStart(e) {
       var thumbLeft = this.thumbLeft;
       this.dragData = {
@@ -3372,7 +3351,6 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
       document.addEventListener('mousemove', this.onDragMove);
       document.addEventListener('mouseup', this.onDragEnd);
     },
-    // 拖拽移动
     onDragMove: function onDragMove(e) {
       var dragData = this.dragData,
           thumbWidth = this.thumbWidth;
@@ -3386,15 +3364,12 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
         thumbLeft = 0;
       } else if (thumbLeft > maxThumbLeft) {
         thumbLeft = maxThumbLeft;
-      } // 更新滑块定位
+      }
 
-
-      dragData.thumbLeft = thumbLeft; // 滚动
-
+      dragData.thumbLeft = thumbLeft;
       this.scrollTo(thumbLeft * (scrollWidth - clientWidth) / (clientWidth - thumbWidth), false);
       e.preventDefault();
     },
-    // 拖拽结束
     onDragEnd: function onDragEnd(e) {
       this.dragData = null;
       document.removeEventListener('mousemove', this.onDragMove);
@@ -3415,8 +3390,8 @@ var TabScrollvue_type_template_id_70362933_staticRenderFns = []
 
 var TabScroll_component = normalizeComponent(
   components_TabScrollvue_type_script_lang_js_,
-  TabScrollvue_type_template_id_70362933_render,
-  TabScrollvue_type_template_id_70362933_staticRenderFns,
+  TabScrollvue_type_template_id_2951143f_render,
+  TabScrollvue_type_template_id_2951143f_staticRenderFns,
   false,
   null,
   null,
@@ -3425,22 +3400,22 @@ var TabScroll_component = normalizeComponent(
 )
 
 /* harmony default export */ var TabScroll = (TabScroll_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6720b08a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/Contextmenu.vue?vue&type=template&id=e3520a3a&
-var Contextmenuvue_type_template_id_e3520a3a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"router-tab__contextmenu",class:{ 'has-icon': _vm.hasIcon },style:({
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4ab3c797-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/Contextmenu.vue?vue&type=template&id=6c878e96&
+var Contextmenuvue_type_template_id_6c878e96_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"router-tab__contextmenu",class:{ 'has-icon': _vm.hasIcon },style:({
     left: ((_vm.data.left) + "px"),
     top: ((_vm.data.top) + "px")
   })},_vm._l((_vm.menuList),function(item){return _c('tab-contextmenu-item',{key:item.id,attrs:{"data":item}})}),1)}
-var Contextmenuvue_type_template_id_e3520a3a_staticRenderFns = []
+var Contextmenuvue_type_template_id_6c878e96_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./lib/components/Contextmenu.vue?vue&type=template&id=e3520a3a&
+// CONCATENATED MODULE: ./lib/components/Contextmenu.vue?vue&type=template&id=6c878e96&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6720b08a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/ContextmenuItem.vue?vue&type=template&id=69b43a93&
-var ContextmenuItemvue_type_template_id_69b43a93_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.visible)?_c('a',{staticClass:"router-tab__contextmenu-item",class:_vm.menuClass,attrs:{"data-action":_vm.id,"disabled":!_vm.enable,"title":_vm.tips},on:{"click":function($event){_vm.enable && _vm.data.handler(_vm.context)}}},[(_vm.icon)?_c('i',{staticClass:"router-tab__contextmenu-icon",class:_vm.icon}):_vm._e(),_vm._v(" "+_vm._s(_vm.title)+" ")]):_vm._e()}
-var ContextmenuItemvue_type_template_id_69b43a93_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4ab3c797-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/ContextmenuItem.vue?vue&type=template&id=75ed123c&
+var ContextmenuItemvue_type_template_id_75ed123c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.visible)?_c('a',{staticClass:"router-tab__contextmenu-item",class:_vm.menuClass,attrs:{"data-action":_vm.id,"disabled":!_vm.enable,"title":_vm.tips},on:{"click":function($event){_vm.enable && _vm.data.handler(_vm.context)}}},[(_vm.icon)?_c('i',{staticClass:"router-tab__contextmenu-icon",class:_vm.icon}):_vm._e(),_vm._v(" "+_vm._s(_vm.title)+" ")]):_vm._e()}
+var ContextmenuItemvue_type_template_id_75ed123c_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./lib/components/ContextmenuItem.vue?vue&type=template&id=69b43a93&
+// CONCATENATED MODULE: ./lib/components/ContextmenuItem.vue?vue&type=template&id=75ed123c&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/ContextmenuItem.vue?vue&type=script&lang=js&
 function ContextmenuItemvue_type_script_lang_js_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
@@ -3469,7 +3444,6 @@ function ContextmenuItemvue_type_script_lang_js_defineProperty(obj, key, value) 
   name: 'ContextmenuItem',
   inject: ['$tabs'],
   props: {
-    // 菜单数据
     data: {
       type: Object,
       required: true
@@ -3491,7 +3465,6 @@ function ContextmenuItemvue_type_script_lang_js_defineProperty(obj, key, value) 
     }
   }, mapGetters('data', {
     id: '',
-    // 菜单标题
     title: function title() {
       return this.$tabs.langs.contextmenu[this.id];
     },
@@ -3502,9 +3475,7 @@ function ContextmenuItemvue_type_script_lang_js_defineProperty(obj, key, value) 
       alias: 'menuClass'
     },
     visible: true,
-    // 是否显示
-    enable: true // 是否启用
-
+    enable: true
   }, 'context'))
 });
 // CONCATENATED MODULE: ./lib/components/ContextmenuItem.vue?vue&type=script&lang=js&
@@ -3519,8 +3490,8 @@ function ContextmenuItemvue_type_script_lang_js_defineProperty(obj, key, value) 
 
 var ContextmenuItem_component = normalizeComponent(
   components_ContextmenuItemvue_type_script_lang_js_,
-  ContextmenuItemvue_type_template_id_69b43a93_render,
-  ContextmenuItemvue_type_template_id_69b43a93_staticRenderFns,
+  ContextmenuItemvue_type_template_id_75ed123c_render,
+  ContextmenuItemvue_type_template_id_75ed123c_staticRenderFns,
   false,
   null,
   null,
@@ -3542,9 +3513,9 @@ function contextmenu_iterableToArrayLimit(arr, i) { var _i = arr == null ? null 
 
 function contextmenu_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-// 菜单数据
+// menu data
 var menuMap = {
-  // 刷新
+  // refresh
   refresh: {
     handler: function handler(_ref) {
       var data = _ref.data,
@@ -3552,14 +3523,14 @@ var menuMap = {
       $tabs.refreshTab(data.id);
     }
   },
-  // 刷新全部
+  // refresh all
   refreshAll: {
     handler: function handler(_ref2) {
       var $tabs = _ref2.$tabs;
       $tabs.refreshAll();
     }
   },
-  // 关闭
+  // closure
   close: {
     enable: function enable(_ref3) {
       var target = _ref3.target;
@@ -3571,7 +3542,7 @@ var menuMap = {
       $tabs.closeTab(data.id);
     }
   },
-  // 关闭左侧
+  // close the left
   closeLefts: {
     enable: function enable(_ref5) {
       var $menu = _ref5.$menu;
@@ -3582,7 +3553,7 @@ var menuMap = {
       $menu.closeMulti($menu.lefts);
     }
   },
-  // 关闭右侧
+  // close the right side
   closeRights: {
     enable: function enable(_ref7) {
       var $menu = _ref7.$menu;
@@ -3593,7 +3564,7 @@ var menuMap = {
       $menu.closeMulti($menu.rights);
     }
   },
-  // 关闭其他
+  // close other
   closeOthers: {
     enable: function enable(_ref9) {
       var $menu = _ref9.$menu;
@@ -3604,7 +3575,7 @@ var menuMap = {
       $menu.closeMulti($menu.others);
     }
   }
-}; // 遍历填充 id
+}; // iterate through the filled ids
 
 Object.entries(menuMap).forEach(function (_ref11) {
   var _ref12 = contextmenu_slicedToArray(_ref11, 2),
@@ -3613,7 +3584,7 @@ Object.entries(menuMap).forEach(function (_ref11) {
 
   return item.id = id;
 });
-/* harmony default export */ var config_contextmenu = (menuMap); // 默认菜单
+/* harmony default export */ var config_contextmenu = (menuMap); // default menu
 
 var defaultMenu = ['refresh', 'refreshAll', 'close', 'closeLefts', 'closeRights', 'closeOthers'];
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/components/Contextmenu.vue?vue&type=script&lang=js&
@@ -3661,11 +3632,10 @@ function Contextmenuvue_type_script_lang_js_defineProperty(obj, key, value) { if
   },
   inject: ['$tabs'],
   props: {
-    // 右键数据
+    // eslint-disable-next-line vue/require-default-prop
     data: {
       type: [Boolean, Object]
     },
-    // 菜单配置
     menu: {
       type: Array,
       default: function _default() {
@@ -3674,18 +3644,15 @@ function Contextmenuvue_type_script_lang_js_defineProperty(obj, key, value) { if
     }
   },
   computed: {
-    // 激活菜单的页签
     target: function target() {
       return this.tabMap[this.data.id];
     },
-    // 菜单选项
     menuList: function menuList() {
-      return this.menu.map(function (item) {
+      return this.menu // eslint-disable-next-line array-callback-return
+      .map(function (item) {
         if (typeof item === 'string') {
-          // 内置菜单
           return config_contextmenu[item];
         } else if (item && item.id) {
-          // 扩展内置菜单
           var origin = config_contextmenu[item.id];
           return origin ? Contextmenuvue_type_script_lang_js_objectSpread(Contextmenuvue_type_script_lang_js_objectSpread({}, origin), item) : item;
         }
@@ -3693,20 +3660,17 @@ function Contextmenuvue_type_script_lang_js_defineProperty(obj, key, value) { if
         return item;
       });
     },
-    // 是否显示图标
     hasIcon: function hasIcon() {
       return this.menuList.some(function (item) {
         return item.icon;
       });
     },
-    // 页签 map
     tabMap: function tabMap() {
       return this.$tabs.$refs.tab.reduce(function (map, item) {
         map[item.id] = item;
         return map;
       }, {});
     },
-    // 页签组件列表
     tabs: function tabs() {
       var _this = this;
 
@@ -3714,19 +3678,16 @@ function Contextmenuvue_type_script_lang_js_defineProperty(obj, key, value) { if
         return _this.tabMap[item.id];
       });
     },
-    // 左侧可关闭的页签
     lefts: function lefts() {
       return this.tabs.slice(0, this.data.index).filter(function (item) {
         return item.closable;
       });
     },
-    // 左侧可关闭的页签
     rights: function rights() {
       return this.tabs.slice(this.data.index + 1).filter(function (item) {
         return item.closable;
       });
     },
-    // 其他可关闭的页签
     others: function others() {
       var _this2 = this;
 
@@ -3739,7 +3700,6 @@ function Contextmenuvue_type_script_lang_js_defineProperty(obj, key, value) { if
     this.adjust();
   },
   methods: {
-    // 关闭多个页签
     closeMulti: function closeMulti(tabs) {
       var _this3 = this;
 
@@ -3796,7 +3756,6 @@ function Contextmenuvue_type_script_lang_js_defineProperty(obj, key, value) { if
                 return _context.finish(19);
 
               case 22:
-                // 当前页签如已关闭，则打开右键选中页签
                 if (!_this3.$tabs.activeTab) {
                   _this3.$router.replace(_this3.target.to);
                 }
@@ -3809,7 +3768,6 @@ function Contextmenuvue_type_script_lang_js_defineProperty(obj, key, value) { if
         }, _callee, null, [[1, 16, 19, 22], [5, 10]]);
       }))();
     },
-    // 适应边界位置
     adjust: function adjust() {
       var clientWidth = this.$el.clientWidth;
       var winWidth = window.innerWidth;
@@ -3832,8 +3790,8 @@ function Contextmenuvue_type_script_lang_js_defineProperty(obj, key, value) { if
 
 var Contextmenu_component = normalizeComponent(
   components_Contextmenuvue_type_script_lang_js_,
-  Contextmenuvue_type_template_id_e3520a3a_render,
-  Contextmenuvue_type_template_id_e3520a3a_staticRenderFns,
+  Contextmenuvue_type_template_id_6c878e96_render,
+  Contextmenuvue_type_template_id_6c878e96_staticRenderFns,
   false,
   null,
   null,
@@ -3855,8 +3813,6 @@ function RouterTabvue_type_script_lang_js_objectSpread(target) { for (var i = 1;
 
 function RouterTabvue_type_script_lang_js_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// 方法
- // 功能模块混入
 
 
 
@@ -3869,7 +3825,7 @@ function RouterTabvue_type_script_lang_js_defineProperty(obj, key, value) { if (
 
 
 
- // RouterTab 组件
+ // RouterTab components
 // @vue/component
 
 var RouterTab = {
@@ -3881,43 +3837,43 @@ var RouterTab = {
     TabContextmenu: Contextmenu
   },
   mixins: [contextmenu, i18n, iframe, operate, mixins_pageLeave, mixins_scroll, restore],
-  // 注入子组件
+  // Inject child components
   provide: function provide() {
     return {
       $tabs: this
     };
   },
   props: {
-    // 初始页签数据
+    // Initial tab data
     tabs: {
       type: Array,
       default: function _default() {
         return [];
       }
     },
-    // 页面刷新后是否恢复页签
+    // Whether to restore the tab after the page is refreshed
     restore: {
       type: [Boolean, String],
       default: false
     },
-    // 是否监听 restoreKey 变化自动还原页签
+    // Whether to monitor restoreKey changes and automatically restore tabs
     restoreWatch: {
       type: Boolean,
       default: false
     },
-    // 页面滚动元素选择器
+    // Page Scroll Element Selector
     pageScroller: {
       type: String,
       default: '.router-tab__container'
     },
-    // 默认页面
+    // default page
     defaultPage: [String, Object],
-    // 页签过渡效果
+    // Tab transition effect
     tabTransition: {
       type: [String, Object],
       default: 'router-tab-zoom'
     },
-    // 页面过渡效果
+    // page transition effect
     pageTransition: {
       type: [String, Object],
       default: function _default() {
@@ -3929,52 +3885,52 @@ var RouterTab = {
     },
 
     /**
-     * 自定义右键菜单
-     * 1. 为 false 时禁用
-     * 2. 为数组时可自定义右键菜单
+     * Customize right-click menu
+     * 1. Disabled when false
+     * 2. You can customize the right-click menu when it is an array
      */
     contextmenu: {
       type: [Boolean, Array],
       default: true
     },
-    // 是否支持页签拖拽排序
+    // Whether to support tab drag and drop sorting
     dragsort: {
       type: Boolean,
       default: true
     },
-    // 新页签插入位置，last 末尾，next 下一个
+    // The insertion position of the new tab, last at the end, next next
     append: {
       type: String,
       default: 'last'
     },
-    // 是否保留最后一个页签不被关闭
+    // Whether to keep the last tab from being closed
     keepLastTab: {
       type: Boolean,
       default: true
     },
-    // 默认是否缓存，可通过路由 meta.keepAlive 重置
+    // Whether to cache by default, it can be reset by routing meta.keepAlive
     keepAlive: {
       type: Boolean,
       default: true
     },
-    // 最大缓存数，0 则不限制
+    // The maximum number of caches, 0 is unlimited
     maxAlive: {
       type: Number,
       default: 0
     },
-    // 是否复用路由组件，可通过路由 meta.reuse 重置
+    // Whether to reuse routing components, which can be reset by routing meta.reuse
     reuse: {
       type: Boolean,
       default: false
     },
-    // 页签国际化配置 i18n (key, [args])
+    // Tab internationalization configuration i18n (key, [args])
     i18n: Function,
 
     /**
-     * 组件语言
-     * - 为字符串时，可选值： 'zh'-中文，'en'-英文
-     * - 为对象时，可设置自定义的语言
-     * - 默认值：'auto'。根据浏览器语言自动识别组件语言。
+     * Component language
+     * - When it is a string, optional values: 'zh'-Chinese, 'en'-English
+     * - When it is an object, you can set a custom language
+     * - Default: 'auto'. Automatically identify component language based on browser language.
      */
     lang: {
       type: [String, Object],
@@ -3984,10 +3940,10 @@ var RouterTab = {
   data: function data() {
     return {
       items: [],
-      // 页签项
+      // tab item
       onDragSort: false,
-      // 拖拽排序中
-      aliveReady: false // RouterAlive 初始化
+      // Drag and drop sorting
+      aliveReady: false // RouterAlive initialization
 
     };
   },
@@ -3996,11 +3952,11 @@ var RouterTab = {
     $alive: function $alive() {
       return this.aliveReady ? this.$refs.routerAlive : null;
     },
-    // 当前激活的页签 id
+    // currently active tab id
     activeTabId: function activeTabId() {
       return this.$alive ? this.$alive.key : null;
     },
-    // 当前激活的页签索引
+    // Currently active tab index
     activeTabIndex: function activeTabIndex() {
       var _this = this;
 
@@ -4008,58 +3964,59 @@ var RouterTab = {
         return item.id === _this.activeTabId;
       });
     },
-    // 当前激活的页签
+    // currently active tab
     activeTab: function activeTab() {
       return this.items[this.activeTabIndex];
     },
-    // 根路径
+    // currently active tab
     basePath: function basePath() {
       return this.$alive ? this.$alive.basePath : '/';
     },
-    // 默认路径
+    // default path
     defaultPath: function defaultPath() {
       return this.defaultPage || this.basePath || '/';
     },
-    // 页签过渡
+    // Tab transition
     tabTrans: function tabTrans() {
       return getTransOpt(this.tabTransition);
     },
-    // 页面过渡
+    // page transition
     pageTrans: function pageTrans() {
       return getTransOpt(this.pageTransition);
     }
   },
   created: function created() {
-    // 添加到原型链
+    // page transition
     RouterTab.Vue.prototype.$tabs = this;
   },
   destroyed: function destroyed() {
-    var proto = RouterTab.Vue.prototype; // 取消原型挂载
+    var proto = RouterTab.Vue.prototype; // Cancel prototype mount
 
     if (proto.$tabs === this) {
       proto.$tabs = null;
     }
   },
   methods: {
-    // RouterAlive 组件就绪
+    // RouterAlive component ready
     onAliveReady: function onAliveReady($alive) {
-      // 获取 keepAlive 组件实例
+      // Get the keepAlive component instance
       this.$refs.routerAlive = $alive;
       this.aliveReady = true;
       this.initTabs();
     },
-    // 初始页签数据
+    // Initial tab data
     initTabs: function initTabs() {
       if (this.restoreTabs()) return;
       this.presetTabs();
     },
-    // 预设页签
+    // Default tab
     presetTabs: function presetTabs() {
       var _this2 = this;
 
       var tabs = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.tabs;
       var ids = {};
-      this.items = tabs.map(function (item) {
+      this.items = tabs // eslint-disable-next-line array-callback-return
+      .map(function (item) {
         item = typeof item === 'string' ? {
           to: item
         } : item || emptyObj;
@@ -4069,11 +4026,11 @@ var RouterTab = {
         if (matched) {
           var tab = _this2.getRouteTab(matched);
 
-          var id = tab.id; // 根据 id 去重
+          var id = tab.id; // Deduplication based on id
 
           if (!ids[id]) {
-            // id 不允许更改
-            delete item.id; // 初始 tab 数据
+            // id is not allowed to change
+            delete item.id; // initial tab data
 
             return ids[id] = Object.assign(tab, item);
           }
@@ -4082,7 +4039,7 @@ var RouterTab = {
         return !!item;
       });
     },
-    // RouterAlive 缓存更新时同步更改页签
+    // Change the tab synchronously when the RouterAlive cache is updated
     onAliveChange: function onAliveChange(type, matched) {
       var items = this.items,
           lastMatchedKey = this.lastMatchedKey;
@@ -4091,17 +4048,18 @@ var RouterTab = {
         var id = _ref.id;
         return id === key;
       });
-      var item = this.getRouteTab(matched); // 页签已存在
+      var item = this.getRouteTab(matched); // Tab already exists
 
       if (matchIdx > -1) {
-        if (type === 'create' || // 创建缓存
-        type === 'update' && items[matchIdx].to !== matched.$route.fullPath // 更新缓存且地址更改
+        if (type === 'create' || // create cache
+        type === 'update' && items[matchIdx].to !== matched.$route.fullPath // update cache and address change
         ) {
-          // 替换原页签
+          // Replace the original tab
           this.$set(items, matchIdx, item);
         }
       } else {
-        // 新增页签
+        // New tab
+        // eslint-disable-next-line no-lonely-if
         if (this.append === 'next' && lastMatchedKey !== undefined) {
           var lastIndex = this.items.findIndex(function (item) {
             return item.id === lastMatchedKey;
@@ -4110,18 +4068,18 @@ var RouterTab = {
         } else {
           items.push(item);
         }
-      } // 上次缓存 key
+      } // last cached key
 
 
       this.lastMatchedKey = key;
     },
-    // 从 route 中获取 tab 配置
+    // get tab configuration from route
     getRouteTab: function getRouteTab(_ref2) {
       var key = _ref2.key,
           $route = _ref2.$route,
           meta = _ref2.meta;
 
-      var tab = RouterTabvue_type_script_lang_js_objectSpread({}, meta); // 支持根据路由函数返回的页签属性
+      var tab = RouterTabvue_type_script_lang_js_objectSpread({}, meta); // Support the tab attribute returned by the routing function
 
 
       var props = ['title', 'tips', 'icon', 'closable'];
@@ -4141,7 +4099,7 @@ var RouterTab = {
         to: $route.fullPath
       });
     },
-    // 重载路由视图
+    // Overload routing view
     reload: function reload() {
       var _this3 = this;
 
@@ -4150,9 +4108,10 @@ var RouterTab = {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this3.$alive.reload();
+                _context.next = 2;
+                return _this3.$alive.reload();
 
-              case 1:
+              case 2:
               case "end":
                 return _context.stop();
             }
@@ -4160,16 +4119,16 @@ var RouterTab = {
         }, _callee);
       }))();
     },
-    // 匹配路由信息
+    // Match routing information
     matchRoute: function matchRoute($route) {
       return this.$alive.matchRoute($route);
     },
-    // 获取路由缓存 key
+    // Get route cache key
     getRouteKey: function getRouteKey() {
       var route = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.$route;
       return this.matchRoute(route).key;
     },
-    // 从路由地址匹配页签 id
+    // From the route address matching tab id
     getIdByPath: function getIdByPath(path) {
       var match = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
       if (!path) return;
@@ -4177,7 +4136,7 @@ var RouterTab = {
       var key = matched.key;
 
       if (match) {
-        // 路由地址精确匹配页签
+        // Routing Address Exact Match Tab
         var matchTab = this.items.find(function (_ref3) {
           var to = _ref3.to;
           return prunePath(to) === prunePath(matched.$route.fullPath);
@@ -4215,7 +4174,7 @@ var RouterTab_component = normalizeComponent(
 )
 
 /* harmony default export */ var lib_RouterTab = (RouterTab_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6720b08a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/page/Iframe.vue?vue&type=template&id=67b32182&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4ab3c797-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./lib/page/Iframe.vue?vue&type=template&id=67b32182&
 var Iframevue_type_template_id_67b32182_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"router-tab-iframe-fake"})}
 var Iframevue_type_template_id_67b32182_staticRenderFns = []
 
@@ -4354,7 +4313,7 @@ var Iframe_component = normalizeComponent(
 }]);
 
 // CONCATENATED MODULE: ./lib/mixins/routerPage.js
- // 浏览器窗口关闭或者刷新
+ // The browser window is closed or refreshed
 
 var beforeunload = function beforeunload($tabs, tabId, beforePageLeave) {
   return function (e) {
@@ -4366,7 +4325,7 @@ var beforeunload = function beforeunload($tabs, tabId, beforePageLeave) {
 
     if (msg && typeof msg === 'string') {
       e.preventDefault();
-      e.returnValue = msg; // 非当前页签则切换
+      e.returnValue = msg; // Switch if it is not the current tab
 
       if ($tabs.activeTabId !== tabId) {
         $tabs.open(tab.to, false, false);
@@ -4376,7 +4335,7 @@ var beforeunload = function beforeunload($tabs, tabId, beforePageLeave) {
     }
   };
 };
-/** 更新页签 */
+/** Update tab */
 
 
 function updateTab(info) {
@@ -4394,12 +4353,12 @@ function updateTab(info) {
       }
     }
   }
-} // 路由页面混入
+} // route page mixin
 
 
 /* harmony default export */ var routerPage = ({
   watch: {
-    // 监听 routerTab 字段，更新页签信息
+    // Monitor the routerTab field and update the tab information
     routeTab: {
       handler: function handler(val) {
         if (!val || this._inactive) return;
@@ -4409,19 +4368,19 @@ function updateTab(info) {
       immediate: true
     }
   },
-  // 创建前记录缓存
+  // Create pre-record cache
   mounted: function mounted() {
     var $tabs = this.$tabs;
 
     var _ref2 = this.$vnode && this.$vnode.componentOptions.Ctor.options || emptyObj,
-        beforePageLeave = _ref2.beforePageLeave; // 页面离开确认
+        beforePageLeave = _ref2.beforePageLeave; // page leave confirmation
 
 
     if ($tabs && beforePageLeave) {
       window.addEventListener('beforeunload', this._beforeunload = beforeunload($tabs, $tabs.activeTabId, beforePageLeave.bind(this)));
     }
   },
-  // 页签激活时更新页签
+  // Update the tab when the tab is activated
   activated: function activated() {
     this.routeTab && updateTab.call(this, this.routeTab);
   },
@@ -4431,11 +4390,11 @@ function updateTab(info) {
     }
   }
 });
-// EXTERNAL MODULE: ./lib/scss/routerTab.scss
-var routerTab = __webpack_require__("751c");
-
 // EXTERNAL MODULE: ./lib/scss/transition.scss
 var transition = __webpack_require__("a85e");
+
+// EXTERNAL MODULE: ./lib/scss/routerTab.scss
+var routerTab = __webpack_require__("751c");
 
 // CONCATENATED MODULE: ./lib/index.js
 
@@ -4443,7 +4402,7 @@ var transition = __webpack_require__("a85e");
 
 
 
- // 安装
+ // Install
 
 lib_RouterTab.install = function install(Vue) {
   if (install.installed) return;
@@ -4451,14 +4410,14 @@ lib_RouterTab.install = function install(Vue) {
   install.installed = true;
   Vue.component(lib_RouterTab.name, lib_RouterTab);
   Vue.mixin(routerPage);
-}; // 如果浏览器环境且拥有全局Vue，则自动安装组件
+}; // If the browser environment has a global Vue, the component is automatically installed
 
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(lib_RouterTab);
 }
 
-/* harmony default export */ var lib = (lib_RouterTab); // 导出
+/* harmony default export */ var lib = (lib_RouterTab); // export
 
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
