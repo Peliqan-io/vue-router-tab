@@ -2154,6 +2154,12 @@ function scroll_asyncToGenerator(fn) { return function () { var self = this, arg
   }, (_applyDecoratedDescriptor(_obj, "adjust", [_dec], Object.getOwnPropertyDescriptor(_obj, "adjust"), _obj)), _obj))
 });
 // CONCATENATED MODULE: ./lib/mixins/restore.js
+
+
+function restore_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function restore_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { restore_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { restore_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 // Restore after tab refresh
 /* harmony default export */ var restore = ({
   computed: {
@@ -2174,11 +2180,28 @@ function scroll_asyncToGenerator(fn) { return function () { var self = this, arg
   beforeUpdate: function beforeUpdate() {
     if (!this.items.length) {
       sessionStorage.removeItem(this.activeTabKey);
-    } else {
+    }
+  },
+  updated: function updated() {
+    var _this = this;
+
+    return restore_asyncToGenerator( /*#__PURE__*/regenerator_default.a.mark(function _callee() {
       var _this$$tabs;
 
-      (_this$$tabs = this.$tabs) === null || _this$$tabs === void 0 ? void 0 : _this$$tabs.saveActiveTab();
-    }
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return (_this$$tabs = _this.$tabs) === null || _this$$tabs === void 0 ? void 0 : _this$$tabs.saveActiveTab();
+
+            case 2:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
   },
   mounted: function mounted() {
     // Save tab data before page reload
