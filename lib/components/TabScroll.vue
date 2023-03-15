@@ -31,12 +31,10 @@
 <script>
 import { scrollTo, scrollIntoView, getScrollbarWidth } from '../util'
 
-// 滚动条
 export default {
   name: 'TabScroll',
 
   props: {
-    // 每次滚动距离
     space: {
       type: Number,
       default: 300
@@ -45,7 +43,7 @@ export default {
 
   data() {
     return {
-      isMobile: false, // 是否移动端
+      isMobile: false,
 
       scrollData: {
         clientWidth: 0,
@@ -58,7 +56,6 @@ export default {
   },
 
   computed: {
-    // 是否拥有滚动条
     hasScroller() {
       return (
         !this.isMobile &&
@@ -67,7 +64,6 @@ export default {
       )
     },
 
-    // 滑块宽度
     thumbWidth() {
       if (!this.hasScroller) return
 
@@ -75,11 +71,9 @@ export default {
       return (clientWidth / scrollWidth) * clientWidth
     },
 
-    // 滑块 left
     thumbLeft() {
       if (!this.hasScroller) return
 
-      // 拖拽滚动
       if (this.dragData) {
         return this.dragData.thumbLeft
       }
@@ -98,7 +92,6 @@ export default {
   },
 
   methods: {
-    // 更新滚动数据
     update() {
       const { container } = this.$refs
 
@@ -106,25 +99,22 @@ export default {
 
       const { clientWidth, scrollWidth, scrollLeft } = container
 
-      // 判断是否移动端
-      // userAgent 中包含 mobile 字段，或者浏览器滚动条宽度为 0
+      // Determine whether the mobile terminal
+      // userAgent contains mobile field, or browser scroll bar width is 0
       this.isMobile =
         /mobile/i.test(navigator.userAgent) || !getScrollbarWidth()
 
       Object.assign(this.scrollData, { clientWidth, scrollWidth, scrollLeft })
     },
 
-    // 滚动到指定位置
     scrollTo(left, smooth = true) {
       scrollTo({ wrap: this.$refs.container, left, smooth })
     },
 
-    // 滚动到元素
     scrollIntoView(el) {
       scrollIntoView({ el, wrap: this.$refs.container, inline: 'center' })
     },
 
-    // 判断子节点是否完全在可视区域
     isInView(el) {
       const { container } = this.$refs
       const offsetLeft = el.offsetLeft
@@ -140,7 +130,6 @@ export default {
       return true
     },
 
-    // 页签鼠标滚动
     onWheel(e) {
       const now = +new Date()
       const enable = now - (this.lastWheel || 0) > 100
@@ -157,7 +146,6 @@ export default {
       )
     },
 
-    // 拖拽
     onDragStart(e) {
       const { thumbLeft } = this
 
@@ -172,7 +160,6 @@ export default {
       document.addEventListener('mouseup', this.onDragEnd)
     },
 
-    // 拖拽移动
     onDragMove(e) {
       const { dragData, thumbWidth } = this
       const { clientWidth, scrollWidth } = this.scrollData
@@ -185,10 +172,8 @@ export default {
         thumbLeft = maxThumbLeft
       }
 
-      // 更新滑块定位
       dragData.thumbLeft = thumbLeft
 
-      // 滚动
       this.scrollTo(
         (thumbLeft * (scrollWidth - clientWidth)) / (clientWidth - thumbWidth),
         false
@@ -197,7 +182,6 @@ export default {
       e.preventDefault()
     },
 
-    // 拖拽结束
     onDragEnd(e) {
       this.dragData = null
 

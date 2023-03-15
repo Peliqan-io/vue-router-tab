@@ -1,13 +1,13 @@
 <template>
   <div class="router-tab">
-    <!-- 页签头部 -->
+    <!-- tab header -->
     <header ref="header" class="router-tab__header">
       <div class="router-tab__slot-start">
         <slot name="start" />
       </div>
 
       <tab-scroll ref="scroll">
-        <!-- 页签列表 -->
+        <!-- tab list -->
         <transition-group
           tag="ul"
           class="router-tab__nav"
@@ -33,7 +33,7 @@
       </div>
     </header>
 
-    <!-- 页面容器 -->
+    <!-- page container -->
     <div class="router-tab__container">
       <router-alive
         page-class="router-tab-page"
@@ -46,7 +46,7 @@
         @change="onAliveChange"
       />
 
-      <!-- iframe 页面 -->
+      <!-- iframe container -->
       <transition-group
         v-bind="pageTrans"
         tag="div"
@@ -65,7 +65,7 @@
       </transition-group>
     </div>
 
-    <!-- 右键菜单 -->
+    <!-- right click menu -->
     <transition name="router-tab-zoom">
       <tab-contextmenu
         v-if="contextmenu !== false && contextData.index > -1"

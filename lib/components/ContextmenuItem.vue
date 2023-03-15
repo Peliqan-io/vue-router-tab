@@ -21,7 +21,6 @@ export default {
   inject: ['$tabs'],
 
   props: {
-    // 菜单数据
     data: {
       type: Object,
       required: true
@@ -36,12 +35,10 @@ export default {
       return { $tabs, $menu, target, data }
     },
 
-    // 从 this.data 提取计算属性
     ...mapGetters(
       'data',
       {
         id: '',
-        // 菜单标题
         title() {
           return this.$tabs.langs.contextmenu[this.id]
         },
@@ -51,8 +48,8 @@ export default {
           default: '',
           alias: 'menuClass'
         },
-        visible: true, // 是否显示
-        enable: true // 是否启用
+        visible: true,
+        enable: true
       },
       'context'
     )
